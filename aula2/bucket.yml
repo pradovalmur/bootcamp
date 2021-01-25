@@ -2,7 +2,14 @@ Description: Cria um Bucket S3
 
 Resources:
 
-  MeuSegundoBucket:
+  MeuPrimeiroBucket:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: meu-segundo-bucket-prado001
+      BucketEncryption: 
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      VersioningConfiguration:
+        Status: Enable
+      
