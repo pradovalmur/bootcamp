@@ -5,7 +5,7 @@ Resources:
   MeuPrimeiroBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: meu-segundo-bucket-prado001
+      BucketName: bucket-prado001
       BucketEncryption: 
         ServerSideEncryptionConfiguration:
           - ServerSideEncryptionByDefault:
