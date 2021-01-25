@@ -11,5 +11,5 @@ Resources:
           - ServerSideEncryptionByDefault:
               SSEAlgorithm: AES256
       VersioningConfiguration:
-        Status: Enable
+        Status: Enabled
       
