@@ -1,0 +1,28 @@
+name: Deploy S3 bucket
+
+on:
+  push:
+    branchs:
+      - main
+
+jobs:
+  deploy:
+    run-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+          run: |
+           python -m pip install --upgrade pip
+           pip install -r requirements.txt
+      -name: Deploy
+       env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACESS_KEY }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFALUT_REGION }}
+       run: |
+        python aula2/deploy.py
