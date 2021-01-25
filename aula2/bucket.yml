@@ -2,14 +2,7 @@ Description: Cria um Bucket S3
 
 Resources:
 
-  MeuPrimeiroBucket:
+  MeuSegundoBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketEncryption: # Criptografar o bucket é opcional, mas é uma boa prática.
-        ServerSideEncryptionConfiguration:
-          - ServerSideEncryptionByDefault:
-              SSEAlgorithm: AES256
-      BucketName: meu-primeiro-bucket # Nome do bucket precisa ser único em toda a AWS.
-
-      # Existem mais propriedades opcionais para um bucket S3 que você pode ver aqui:
-      # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html
+      BucketName: meu-segundo-bucket-prado001
